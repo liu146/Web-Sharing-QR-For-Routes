@@ -1,0 +1,38 @@
+{
+  "name": "webshareqrforroute",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky",
+    "dev:frontend": "pnpm --filter frontend dev",
+    "lint:frontend": "pnpm --filter frontend lint",
+    "lint:frontend:fix": "pnpm --filter frontend lint:fix",
+    "format:frontend": "pnpm --filter frontend format",
+    "commit": "pnpm cz"
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "pnpm lint:frontend:fix",
+      "pnpm format:frontend"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.20.0",
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-git"
+    }
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "commitizen": "^4.3.1",
+    "cz-git": "^1.12.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7"
+  }
+}
